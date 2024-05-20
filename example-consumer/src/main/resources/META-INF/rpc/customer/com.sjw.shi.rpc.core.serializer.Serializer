@@ -1,0 +1,3 @@
+kyro=com.sjw.shi.rpc.core.serializer.impl.KryoSerializer
+json=com.sjw.shi.rpc.core.serializer.impl.JsonSerializer
+hessian=com.sjw.shi.rpc.core.serializer.impl.HessianSerializer
