@@ -1,8 +1,5 @@
 package com.sjw.yu.rpc.easy.consumer;
-
-import com.sjw.shi.rpc.core.RpcAppliation;
 import com.sjw.shi.rpc.core.proxy.MockServiceProxyFactory;
-import com.sjw.shi.rpc.core.proxy.ServiceProxyFactory;
 import com.sjw.shi.rpc.core.yupi.example.common.model.User;
 import com.sjw.shi.rpc.core.yupi.example.common.service.UserService;
 
