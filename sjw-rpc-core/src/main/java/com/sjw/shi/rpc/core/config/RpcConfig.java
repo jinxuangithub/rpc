@@ -26,7 +26,7 @@ public class RpcConfig {
      */
     private String version = "1.0";
 
-    private boolean mock = true;
+    private boolean mock = false;
 
     private String serilizer = SerializerKeys.JDK;
 

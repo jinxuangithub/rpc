@@ -1,6 +1,9 @@
 package com.sjw.shi.rpc.core;
 
+import com.sjw.shi.rpc.core.config.RegistryConfig;
 import com.sjw.shi.rpc.core.config.RpcConfig;
+import com.sjw.shi.rpc.core.registry.Registry;
+import com.sjw.shi.rpc.core.registry.RegistryFactory;
 import com.sjw.shi.rpc.core.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +15,15 @@ public class RpcAppliation {
 
     public static void init(RpcConfig newrpcConfig) {
         rpcConfig = newrpcConfig;
-        log.info("rpc config init success");
+        log.info("rpc  init ,config is {}", rpcConfig.toString());
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getRegistry(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry  init ,config is {}", registryConfig);
+        Runtime.getRuntime()
+                .addShutdownHook(new Thread(
+                       registry::destroy
+                ));
     }
 
     public static void init() {
